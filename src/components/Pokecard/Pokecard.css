@@ -1,0 +1,165 @@
+h4 {
+  padding: .5rem;
+}
+
+.Pokecard {
+  color: #333;
+  margin: 1rem;
+  border-radius: 1rem;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,.4));
+  perspective: 150rem;
+  transition: all 0.8s ease;
+}
+
+.Pokecard:hover {
+  cursor: pointer;
+}
+
+.Pokecard:active {
+  transform: scale(0.95);
+}
+
+.Pokecard-sprite {
+  height: 10rem;
+}
+
+.Pokecard-side {
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  background-color: rgba(250, 235, 215, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.Pokecard-side-name {
+  border-bottom: 2px solid rgba(0,0,0,0.4);
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.Pokecard-side-front {
+  height: 100%;
+  width: 100%;
+}
+
+.Pokecard-side-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: .5fr 1fr 1fr 1fr;
+}
+
+.Pokecard:hover .Pokecard-side-front {
+  transform: rotateY(-180deg);
+}
+
+.Pokecard:hover .Pokecard-side-back {
+  transform: rotateY(0deg);
+  background-color: rgba(250, 235, 215, 0.9);
+}
+
+.Pokecard-last {
+  color: #333;
+  margin: 1rem;
+  border-radius: 1rem;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,.4));
+  animation: breathe 1s ease infinite normal;
+  transition: all 0.8s ease;
+  perspective: 150rem;
+}
+
+.Pokecard-last:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.Pokecard-side-front-clicked {
+  transform: rotateY(-180deg);
+}
+
+.Pokecard-side-back-clicked {
+  transform: rotateY(0deg);
+}
+
+.Pokecard-side-back-button {
+  float: left;
+  height: 1rem;
+}
+
+.Pokecard-side-back-input {
+  background-color: rgba(250, 235, 215, 0.3);
+  border: 2px solid rgba(250, 235, 215, 0.8);
+  font-size: 1.5rem;
+  border: none;
+  width: 70%;
+  margin: 0 auto;
+  height: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.Pokecard-side-back-input:focus, .Pokecard-side-back-submit:focus {
+  outline: none;
+}
+
+.Pokecard-side-back-submit {
+  background-color: transparent;
+  font-size: 1rem;
+  border: 2px solid rgba(250, 235, 215, 0.4);
+  width: 50%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.Pokecard-side-back-submit:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  background-color: rgba(250, 235, 215, 0.8);
+}
+
+.Pokecard-side-back-clicked-error {
+  animation: error 0.75s ease normal;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0rem);
+  }
+  12.5% {
+    transform: translateX(1rem);
+  }
+  25% {
+    transform: translateX(-1rem);
+  }
+  50% {
+    transform: translateX(1rem);
+  }
+  62.5% {
+    tranform: translateX(-1rem);
+  }
+  100% {
+    transform: scale(0rem);
+  }
+}
+
+.Pokecard-addicon {
+  width: 6rem;
+  margin-bottom: 2rem;
+}
