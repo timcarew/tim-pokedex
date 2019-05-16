@@ -52,6 +52,7 @@ class Pokecard extends Component {
           this.setState({ shouldPlayError: false });
           this.setState({ addIsClicked: false });
           this.refs.nameInput.value = "";
+          this.setState({pokemonToAdd: ""});
         })
         .catch(err => {
           this.setState({ errorClass: "Pokecard-side-back-clicked-error" });
